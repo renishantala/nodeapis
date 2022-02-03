@@ -33,9 +33,22 @@ router.patch('/usermodels/:id',async (req,res)=>{
          {
             imovie.name = req.body.name
          }
-        if (req.body.gender) 
-        {
+        if (req.body.email)
+         {
+            imovie.email = req.body.email
+         }
+        if (req.body.age)
+         {
+            imovie.age = req.body.age
+         }
+        if (req.body.gender)
+         {
             imovie.gender = req.body.gender
+         }
+        
+        if (req.body.mobileno) 
+        {
+            imovie.mobileno = req.body.mobileno
         }
         await imovie.save()
         res.send(imovie)
